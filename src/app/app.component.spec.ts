@@ -23,4 +23,12 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('HelloMark');
   });
+
+  it('expect player selection to be hidden after event triggered', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.displayPlayerSelection).toEqual(true);
+    app.playerSelected('michi');
+    expect(app.displayPlayerSelection).toEqual(false);
+  });
 });
